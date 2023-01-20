@@ -21,11 +21,11 @@ window.onload = () => {
 	if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
 		bodyTheme.classList.add("dark-theme");
 		bodyTheme.classList.remove("light-theme");
-		themeBtn.innerText = "light";
+		themeBtn.innerText = "LIGHT";
 	} else {
 		bodyTheme.classList.add("light-theme");
 		bodyTheme.classList.remove("dark-theme");
-		themeBtn.innerText = "dark";
+		themeBtn.innerText = "DARK";
 	}
 };
 const catLoader = async () => {
@@ -116,13 +116,13 @@ searchButton.onclick = () => {
 };
 
 themeBtn.onclick = () => {
-	if (themeBtn.innerText == "dark") {
+	if (themeBtn.innerText == "DARK") {
 		bodyTheme.classList.remove("light-theme");
 		bodyTheme.classList.add("dark-theme");
-		themeBtn.innerText = "light";
+		themeBtn.innerText = "LIGHT";
 	} else {
 		bodyTheme.classList.remove("dark-theme");
 		bodyTheme.classList.add("light-theme");
-		themeBtn.innerText = "dark";
+		themeBtn.innerText = "DARK";
 	}
 };

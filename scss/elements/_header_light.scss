@@ -1,0 +1,17 @@
+.light-theme {
+    .header {
+        .header__title {
+            color: map-get($light-colors, header_titleText-color);
+        }
+        .header__switchThemeBtn {
+            color: map-get($light-colors, header_switchTxt-color);
+
+            &::after {
+                content: url('../assets/icon-moon.svg');
+                position: absolute;
+                top: 0;
+                right: 1rem;
+            }
+        }
+    }
+}
