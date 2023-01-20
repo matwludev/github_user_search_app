@@ -1,24 +1,33 @@
-body {
-    .header {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
-        padding: 3rem 2.5rem 4rem;
-
-        .header__title {
-            font-size: 2.6rem;
-            font-weight: 700;
-        }
-
-        .header__switchThemeBtn {
+ body {
+    .user {
+        position: relative;
+        margin: 0 2rem 2rem;
+        .user__searchInput {
             position: relative;
-            background: none;
+            width: 100%;
+            padding: 2rem 0 2rem 4.5rem;
+            border-radius: 1rem;
             border: none;
-            text-transform: uppercase;
-            font-size: 1.3rem;
-            letter-spacing: .25rem;
-            padding-right: 4rem;
+
+            &::placeholder {
+                font-size: 1.3rem;
+                letter-spacing: 0;
+            }
+
+        }
+        &::after {
+            content: url('../assets/icon-search.svg');
+            position: absolute;
+            top: 1.75rem;
+            left: 1.5rem;
+        }
+        .user__searchBtn {
+            position: absolute;
+            top: 1rem;
+            right: .5rem;
+            border-radius: 1rem;
+            border: none;
+            padding: 1rem 1.5rem;
         }
     }
-}
+ }
