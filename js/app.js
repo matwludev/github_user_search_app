@@ -1,35 +1,51 @@
 const userSearch = document.querySelector(".user__searchInput");
-const userPhoto = document.querySelector(".user__photo");
-const userName = document.querySelector(".user__name");
-const userUsername = document.querySelector(".user__userName");
-const userJoined = document.querySelector(".user__joined");
-const userBio = document.querySelector(".user__bio");
-const userRepos = document.querySelector(".user__repos");
-const userFollowers = document.querySelector(".user__followers");
-const userFollowing = document.querySelector(".user__following");
-const userLocation = document.querySelector(".user__location");
-const userWebsite = document.querySelector(".user__website");
-const userTwitter = document.querySelector(".user__twitter");
-const userCompany = document.querySelector(".user__company");
+const userPhoto = document.querySelector(".info__userPhoto");
+const userName = document.querySelector(".info__userName");
+const userUsername = document.querySelector(".info__userUsername");
+const userJoinedDay = document.querySelector(".info__userJoinedDay");
+const userJoinedMonth = document.querySelector(".info__userJoinedMonth");
+const userJoinedYear = document.querySelector(".info__userJoinedYear");
+const userBio = document.querySelector(".info__userBio");
+const userRepos = document.querySelector(".info__userRepos");
+const userFollowers = document.querySelector(".info__userFollowers");
+const userFollowing = document.querySelector(".info__userFollowing");
+const userLocation = document.querySelector(".info__userLocation");
+const userWebsite = document.querySelector(".info__userWebsite");
+const userTwitter = document.querySelector(".info__userTwitter");
+const userCompany = document.querySelector(".info__userCompany");
 const searchButton = document.querySelector(".user__searchBtn");
-console.log(userPhoto);
+const bodyTheme = document.querySelector("body");
+const themeBtn = document.querySelector(".header__switchThemeBtn");
+
+window.onload = () => {
+	if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+		bodyTheme.classList.add("dark-theme");
+		bodyTheme.classList.remove("light-theme");
+		themeBtn.innerText = "light";
+	} else {
+		bodyTheme.classList.add("light-theme");
+		bodyTheme.classList.remove("dark-theme");
+		themeBtn.innerText = "dark";
+	}
+};
 const catLoader = async () => {
 	const octocat = await fetch("https://api.github.com/users/octocat");
 	const octocatJson = await octocat.json();
-	console.log(octocatJson);
 	const response = await fetch(
 		"https://api.github.com/users/" + userSearch.value
 	);
 	const myJson = await response.json();
 	const date = new Date(octocatJson.created_at);
-	console.log(myJson);
 	userSearch.value = "";
 	userPhoto.src = octocatJson.avatar_url;
 	userName.innerText = octocatJson.name;
 	userUsername.innerText = octocatJson.login;
-	userJoined.innerText = date.toDateString();
+	userJoinedDay.innerText = date.toLocaleString("en", { day: "numeric" }) + " ";
+	userJoinedMonth.innerText =
+		date.toLocaleString("en", { month: "short" }) + " ";
+	userJoinedYear.innerText = date.toLocaleString("en", { year: "numeric" });
 	octocatJson.bio == null
-		? (userBio.innerText = "No Bio")
+		? (userBio.innerText = "This profile has no bio")
 		: (userBio.innerText = octocatJson.bio);
 	userRepos.innerText = octocatJson.public_repos;
 	userFollowers.innerText = octocatJson.followers;
@@ -61,9 +77,13 @@ searchButton.onclick = () => {
 				userName.innerText = myJson.name;
 			}
 			userUsername.innerText = "@" + myJson.login;
-			userJoined.innerText = date.toDateString();
+			userJoinedDay.innerText =
+				date.toLocaleString("en", { day: "numeric" }) + " ";
+			userJoinedMonth.innerText =
+				date.toLocaleString("en", { month: "short" }) + " ";
+			userJoinedYear.innerText = date.toLocaleString("en", { year: "numeric" });
 			if (myJson.bio == null) {
-				userBio.innerText = "No Bio";
+				userBio.innerText = "This profile has no bio";
 			} else {
 				userBio.innerText = myJson.bio;
 			}
@@ -93,4 +113,16 @@ searchButton.onclick = () => {
 		}
 	};
 	userFinder();
+};
+
+themeBtn.onclick = () => {
+	if (themeBtn.innerText == "dark") {
+		bodyTheme.classList.remove("light-theme");
+		bodyTheme.classList.add("dark-theme");
+		themeBtn.innerText = "light";
+	} else {
+		bodyTheme.classList.remove("dark-theme");
+		bodyTheme.classList.add("light-theme");
+		themeBtn.innerText = "dark";
+	}
 };
