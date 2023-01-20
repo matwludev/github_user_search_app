@@ -16,8 +16,16 @@
 
 $light-colors:(body_bg-color: hsl(227, 100%, 98%),
 header_titleText-color: hsl(217, 21%, 21%),
-header_switchTxt-color: hsl(217, 35%, 45%) );
+header_switchTxt-color: hsl(217, 35%, 45%),
+nav_btnBg-color: hsl(212, 100%, 50%),
+nav_btnText-color:hsl(0,0%,100%),
+nav_placeholderBg-color: hsl(0,0%,100%),
+nav_placeholderText-color:hsl(217, 35%, 45%), );
 
 
 $dark-colors:(body_bg-color:hsl(220, 40%, 13%), 
-header_text-color:hsl(0,0%,100%), );
+header_text-color:hsl(0,0%,100%),
+nav_btnBg-color: hsl(212, 100%, 50%),
+nav_btnText-color: hsl(0,0%,100%),
+nav_placeholderBg-color: hsl(222, 41%, 20%),
+nav_placeholderText-color: hsl(0,0%,100%), );

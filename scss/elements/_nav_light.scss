@@ -1,0 +1,15 @@
+.light-theme {
+    .user {
+        .user__searchInput {
+            background-color: map-get($light-colors, nav_placeholderBg-color);
+            &::placeholder {
+                color: map-get($light-colors, nav_placeholderText-color)
+            }
+
+        }
+        .user__searchBtn {
+            background-color: map-get($light-colors , nav_btnBg-color );
+            color: map-get($light-colors, nav_btnText-color )
+        }
+    }
+}
