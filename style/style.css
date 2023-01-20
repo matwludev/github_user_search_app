@@ -11,12 +11,59 @@
   font-family: "Space Mono", monospace;
 }
 
+body .header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 3rem 2.5rem 4rem;
+}
+body .header .header__title {
+  font-size: 2.6rem;
+  font-weight: 700;
+}
+body .header .header__switchThemeBtn {
+  position: relative;
+  background: none;
+  border: none;
+  text-transform: uppercase;
+  font-size: 1.3rem;
+  letter-spacing: 0.25rem;
+  padding-right: 4rem;
+}
+
 .dark-theme {
   background-color: hsl(227deg, 100%, 98%);
 }
 
 .dark-theme {
   background-color: hsl(220deg, 40%, 13%);
+}
+
+.light-theme .header .header__title {
+  color: hsl(217deg, 21%, 21%);
+}
+.light-theme .header .header__switchThemeBtn {
+  color: hsl(217deg, 35%, 45%);
+}
+.light-theme .header .header__switchThemeBtn::after {
+  content: url("../assets/icon-moon.svg");
+  position: absolute;
+  top: 0;
+  right: 1rem;
+}
+
+.dark-theme .header .header__title {
+  color: hsl(0deg, 0%, 100%);
+}
+.dark-theme .header .header__switchThemeBtn {
+  color: hsl(0deg, 0%, 100%);
+}
+.dark-theme .header .header__switchThemeBtn::after {
+  content: url("../assets/icon-sun.svg");
+  position: absolute;
+  top: 0;
+  right: 1rem;
 }
 
 /*# sourceMappingURL=style.css.map */

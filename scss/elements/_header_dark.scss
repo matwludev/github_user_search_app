@@ -1,0 +1,17 @@
+.dark-theme {
+    .header {
+        .header__title {
+            color: map-get($dark-colors, header_text-color);
+        }
+        .header__switchThemeBtn {
+            color: map-get($dark-colors, header_text-color);
+
+            &::after {
+                content: url('../assets/icon-sun.svg');
+                position: absolute;
+                top: 0;
+                right: 1rem;
+            }
+        }
+    }
+}

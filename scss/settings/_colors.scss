@@ -14,7 +14,10 @@
 // hsl(222, 41%, 20%) 
 
 
-$light-colors:(body_bg-color: hsl(227, 100%, 98%));
+$light-colors:(body_bg-color: hsl(227, 100%, 98%),
+header_titleText-color: hsl(217, 21%, 21%),
+header_switchTxt-color: hsl(217, 35%, 45%) );
 
 
-$dark-colors:(body_bg-color:hsl(220, 40%, 13%));
+$dark-colors:(body_bg-color:hsl(220, 40%, 13%), 
+header_text-color:hsl(0,0%,100%), );
