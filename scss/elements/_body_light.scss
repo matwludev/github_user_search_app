@@ -1,0 +1,5 @@
+@import '../settings/colors';
+
+.dark-theme {
+    background-color: map-get($light-colors, body_bg-color);
+}

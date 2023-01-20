@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-us">
 	<head>
 		<meta charset="UTF-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -8,47 +8,55 @@
 		<title>GitHub User Search App</title>
 	</head>
 	<body>
-		<header>
-			<h1>devfinder</h1>
-			<button>light</button>
+		<header class="header">
+			<h1 class="header__title">devfinder</h1>
+			<button class="header__switchThemeBtn">dark</button>
 		</header>
-		<nav>
-			<input type="text" class="user__searchInput" />
+		<nav class="user">
+			<input
+				type="text"
+				class="user__searchInput"
+				placeholder="Search GitHub username..."
+			/>
 			<button class="user__searchBtn">search</button>
 		</nav>
-		<main>
-			<img src="" alt="users photo" class="user__photo" />
+		<main class="info">
+			<img src="" alt="users photo" class="info__userPhoto" />
 			<section>
 				<div>
 					<div>
-						<h2 class="user__name"></h2>
-						<span class="user__userName"></span>
+						<h2 class="info__userName"></h2>
+						<span class="info__userUsername"></span>
 					</div>
-					<p class="user__joined"></p>
+					<p class="info__userJoined">
+						Joined <span class="info__userJoinedDay"></span
+						><span class="info__userJoinedMonth"></span
+						><span class="info__userJoinedYear"></span>
+					</p>
 				</div>
-				<p class="user__bio"></p>
+				<p class="info__userBio"></p>
 				<div>
 					<div>
 						<h3>Repos</h3>
-						<span class="user__repos">X</span>
+						<span class="info__userRepos">X</span>
 					</div>
 					<div>
 						<h3>Followers</h3>
-						<span class="user__followers">Y</span>
+						<span class="info__userFollowers">Y</span>
 					</div>
 					<div>
 						<h3>Following</h3>
-						<span class="user__following">Z</span>
+						<span class="info__userFollowing">Z</span>
 					</div>
 				</div>
 				<div>
 					<div>
-						<span class="user__location">Location</span>
-						<a href="" class="user__website">Website</a>
+						<span class="info__userLocation">Location</span>
+						<a href="" class="info__userWebsite">Website</a>
 					</div>
 					<div>
-						<span class="user__twitter">Twitter</span>
-						<a href="" class="user__company">Company</a>
+						<span class="info__userTwitter">Twitter</span>
+						<a href="" class="info__userCompany">Company</a>
 					</div>
 				</div>
 			</section>

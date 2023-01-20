@@ -1,0 +1,20 @@
+// colors
+// LIGHT MODE 
+// hsl(212, 100%, 50%)
+// hsl(217,20%,51%)
+// hsl(217, 35%, 45%)
+// hsl(217, 21%, 21%)
+// hsl(227, 100%, 98%)
+// hsl(0,0%,100%)
+
+// DARK MODE
+// hsl(212, 100%, 50%)
+// hsl(0,0%,100%)
+// hsl(220, 40%, 13%)
+// hsl(222, 41%, 20%) 
+
+
+$light-colors:(body_bg-color: hsl(227, 100%, 98%));
+
+
+$dark-colors:(body_bg-color:hsl(220, 40%, 13%));
