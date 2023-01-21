@@ -11,6 +11,10 @@
   font-family: "Space Mono", monospace;
 }
 
+a {
+  text-decoration: none;
+}
+
 body .header {
   display: flex;
   flex-direction: row;
@@ -34,7 +38,7 @@ body .header .header__switchThemeBtn {
 
 body .user {
   position: relative;
-  margin: 0 2rem 2rem;
+  margin: 0 2.5rem 2rem;
 }
 body .user .user__searchInput {
   position: relative;
@@ -60,6 +64,110 @@ body .user .user__searchBtn {
   border-radius: 1rem;
   border: none;
   padding: 1rem 1.5rem;
+}
+
+body .info {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0 2.5rem;
+  border-radius: 1rem;
+}
+body .info .info__userPhoto {
+  position: absolute;
+  width: 7rem;
+  height: 7rem;
+  top: 3.5rem;
+  left: 2.5rem;
+  border-radius: 50%;
+}
+body .info .info__mainUserInfo {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 3.5rem;
+}
+body .info .info__mainUserInfo .info__userNameLogin {
+  margin: 3.5rem 0 0 12rem;
+}
+body .info .info__mainUserInfo .info__userNameLogin .info__userName {
+  font-size: 1.6rem;
+  line-height: 2.4rem;
+  font-weight: 700;
+}
+body .info .info__mainUserInfo .info__userNameLogin .info__userUsername {
+  font-size: 1.3rem;
+  line-height: 2rem;
+  font-weight: 400;
+}
+body .info .info__mainUserInfo .info__userJoined {
+  display: inline-block;
+  margin: 0.5rem 0 0 12rem;
+  font-size: 1.3rem;
+  line-height: 2rem;
+  font-weight: 400;
+}
+body .info .info__userBio {
+  width: 100%;
+  font-size: 1.3rem;
+  line-height: 2.5rem;
+  font-weight: 400;
+  margin: 0 2.5rem;
+}
+body .info .info__userNumbers {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin: 2.5rem;
+  padding: 2rem 3rem;
+  border-radius: 1rem;
+}
+body .info .info__userNumbers .info__userNumbersBox {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+body .info .info__userNumbers .info__userNumbersBox h3 {
+  font-size: 1.1rem;
+  line-height: 1.6rem;
+  font-weight: 400;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+body .info .info__userNumbers .info__userNumbersBox span {
+  font-size: 1.6rem;
+  line-height: 2.4rem;
+  font-weight: 700;
+  text-align: center;
+}
+body .info .info__userContacts {
+  display: flex;
+  flex-direction: column;
+  margin-left: 2.5rem;
+}
+body .info .info__userContacts .info__userContactsBox {
+  display: flex;
+  flex-direction: column;
+}
+body .info .info__userContacts .info__userContactsBox div {
+  position: relative;
+  margin-bottom: 1.5rem;
+}
+body .info .info__userContacts .info__userContactsBox div svg {
+  position: absolute;
+  left: 0;
+}
+body .info .info__userContacts .info__userContactsBox div span, body .info .info__userContacts .info__userContactsBox div a {
+  position: relative;
+  font-size: 1.3rem;
+  line-height: 2rem;
+  font-weight: 400;
+  padding-left: 3.3rem;
+}
+body .info .info__userContacts .info__userContactsBox:nth-of-type(2) div:last-child {
+  margin-bottom: 5rem;
 }
 
 .light-theme {
@@ -98,6 +206,7 @@ body .user .user__searchBtn {
 
 .light-theme .user .user__searchInput {
   background-color: hsl(0deg, 0%, 100%);
+  color: hsl(217deg, 35%, 45%);
 }
 .light-theme .user .user__searchInput::placeholder {
   color: hsl(217deg, 35%, 45%);
@@ -109,6 +218,7 @@ body .user .user__searchBtn {
 
 .dark-theme .user .user__searchInput {
   background-color: hsl(222deg, 41%, 20%);
+  color: hsl(0deg, 0%, 100%);
 }
 .dark-theme .user .user__searchInput::placeholder {
   color: hsl(0deg, 0%, 100%);
@@ -116,6 +226,46 @@ body .user .user__searchBtn {
 .dark-theme .user .user__searchBtn {
   background-color: hsl(212deg, 100%, 50%);
   color: hsl(0deg, 0%, 100%);
+}
+
+.dark-theme .info {
+  background-color: hsl(222deg, 41%, 20%);
+}
+.dark-theme .info .info__mainUserInfo .info__userNameLogin .info__userName {
+  color: hsl(0deg, 0%, 100%);
+}
+.dark-theme .info .info__mainUserInfo .info__userNameLogin .info__userUsername {
+  color: hsl(212deg, 100%, 50%);
+}
+.dark-theme .info .info__mainUserInfo .info__userJoined {
+  color: hsl(0deg, 0%, 100%);
+}
+.dark-theme .info .info__userBio {
+  color: hsl(0deg, 0%, 100%);
+}
+.dark-theme .info .info__userBio.noBio {
+  color: hsla(0deg, 0%, 100%, 0.5);
+}
+.dark-theme .info .info__userNumbers {
+  background-color: hsl(220deg, 40%, 13%);
+}
+.dark-theme .info .info__userNumbers .info__userNumbersBox h3 {
+  color: hsla(0deg, 0%, 100%, 0.75);
+}
+.dark-theme .info .info__userNumbers .info__userNumbersBox span {
+  color: hsl(0deg, 0%, 100%);
+}
+.dark-theme .info .info__userContacts .info__userContactsBox div svg path {
+  fill: hsl(0deg, 0%, 100%);
+}
+.dark-theme .info .info__userContacts .info__userContactsBox div span, .dark-theme .info .info__userContacts .info__userContactsBox div a {
+  color: hsl(0deg, 0%, 100%);
+}
+.dark-theme .info .info__userContacts .info__userContactsBox div.noData svg path {
+  fill: hsla(0deg, 0%, 100%, 0.5);
+}
+.dark-theme .info .info__userContacts .info__userContactsBox div.noData span, .dark-theme .info .info__userContacts .info__userContactsBox div.noData a {
+  color: hsla(0deg, 0%, 100%, 0.5);
 }
 
 /*# sourceMappingURL=style.css.map */

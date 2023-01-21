@@ -31,21 +31,19 @@ window.onload = () => {
 const catLoader = async () => {
 	const octocat = await fetch("https://api.github.com/users/octocat");
 	const octocatJson = await octocat.json();
-	const response = await fetch(
-		"https://api.github.com/users/" + userSearch.value
-	);
-	const myJson = await response.json();
+
 	const date = new Date(octocatJson.created_at);
 	userSearch.value = "";
 	userPhoto.src = octocatJson.avatar_url;
 	userName.innerText = octocatJson.name;
-	userUsername.innerText = octocatJson.login;
+	userUsername.innerText = "@" + octocatJson.login;
 	userJoinedDay.innerText = date.toLocaleString("en", { day: "numeric" }) + " ";
 	userJoinedMonth.innerText =
 		date.toLocaleString("en", { month: "short" }) + " ";
 	userJoinedYear.innerText = date.toLocaleString("en", { year: "numeric" });
 	octocatJson.bio == null
-		? (userBio.innerText = "This profile has no bio")
+		? ((userBio.innerText = "This profile has no bio"),
+		  userBio.classList.add("noBio"))
 		: (userBio.innerText = octocatJson.bio);
 	userRepos.innerText = octocatJson.public_repos;
 	userFollowers.innerText = octocatJson.followers;
@@ -53,7 +51,8 @@ const catLoader = async () => {
 	userLocation.innerText = octocatJson.location;
 	userWebsite.innerText = octocatJson.blog;
 	octocatJson.twitter_username == null
-		? (userTwitter.innerText = "Not Available")
+		? ((userTwitter.innerText = "Not Available"),
+		  userTwitter.parentElement.classList.add("noData"))
 		: (userTwitter.innerText = octocatJson.twitter_username);
 	userCompany.innerText = octocatJson.company;
 };
@@ -71,45 +70,47 @@ searchButton.onclick = () => {
 			alert("No user!");
 		} else {
 			userPhoto.src = myJson.avatar_url;
-			if (myJson.name == null) {
-				userName.innerText = myJson.login;
-			} else {
-				userName.innerText = myJson.name;
-			}
+			myJson.name == null
+				? (userName.innerText = myJson.login)
+				: (userName.innerText = myJson.name);
+
 			userUsername.innerText = "@" + myJson.login;
 			userJoinedDay.innerText =
 				date.toLocaleString("en", { day: "numeric" }) + " ";
 			userJoinedMonth.innerText =
 				date.toLocaleString("en", { month: "short" }) + " ";
 			userJoinedYear.innerText = date.toLocaleString("en", { year: "numeric" });
-			if (myJson.bio == null) {
-				userBio.innerText = "This profile has no bio";
-			} else {
-				userBio.innerText = myJson.bio;
-			}
+			myJson.bio == null
+				? ((userBio.innerText = "This profile has no bio"),
+				  userBio.classList.add("noBio"))
+				: ((userBio.innerText = myJson.bio), userBio.classList.remove("noBio"));
+
 			userRepos.innerText = myJson.public_repos;
 			userFollowers.innerText = myJson.followers;
 			userFollowing.innerText = myJson.following;
-			if (myJson.location == null) {
-				userLocation.innerText = "Not Available";
-			} else {
-				userLocation.innerText = myJson.location;
-			}
-			if (myJson.blog == null) {
-				userWebsite.innerText = "Not Available";
-			} else {
-				userWebsite.innerText = myJson.blog;
-			}
-			if (myJson.Twitter == null) {
-				userTwitter.innerText = "Not Available";
-			} else {
-				userTwitter.innerText = myJson.twitter_username;
-			}
-			if (myJson.company == null) {
-				userCompany.innerText = "Not Available";
-			} else {
-				userCompany.innerText = myJson.company;
-			}
+			myJson.location == null || myJson.location == ""
+				? ((userLocation.innerText = "Not Available"),
+				  userLocation.parentElement.classList.add("noData"))
+				: ((userLocation.innerText = myJson.location),
+				  userLocation.parentElement.classList.remove("noData"));
+
+			myJson.blog == null || myJson.blog == ""
+				? ((userWebsite.innerText = "Not Available"),
+				  userWebsite.parentElement.classList.add("noData"))
+				: ((userWebsite.innerText = myJson.blog),
+				  userWebsite.parentElement.classList.remove("noData"));
+
+			myJson.twitter_username == null || myJson.twitter_username == ""
+				? ((userTwitter.innerText = "Not Available"),
+				  userTwitter.parentElement.classList.add("noData"))
+				: ((userTwitter.innerText = myJson.twitter_username),
+				  userTwitter.parentElement.classList.remove("noData"));
+
+			myJson.company == null || myJson.company == ""
+				? ((userCompany.innerText = "Not Available"),
+				  userCompany.parentElement.classList.add("noData"))
+				: ((userCompany.innerText = myJson.company),
+				  userCompany.parentElement.classList.remove("noData"));
 		}
 	};
 	userFinder();
