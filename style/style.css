@@ -65,6 +65,15 @@ body .user .user__searchBtn {
   border: none;
   padding: 1rem 1.5rem;
 }
+body .user .user__searchNotFound {
+  position: absolute;
+  display: none;
+  font-size: 1.5rem;
+  font-weight: 700;
+  top: 1.75rem;
+  right: 10rem;
+  color: hsl(0deg, 91%, 62%);
+}
 
 body .info {
   position: relative;
@@ -228,6 +237,49 @@ body .info .info__userContacts .info__userContactsBox:nth-of-type(2) div:last-ch
   color: hsl(0deg, 0%, 100%);
 }
 
+.light-theme .info {
+  background-color: hsl(0deg, 0%, 100%);
+}
+.light-theme .info .info__mainUserInfo .info__userNameLogin .info__userName {
+  color: hsl(217deg, 21%, 21%);
+}
+.light-theme .info .info__mainUserInfo .info__userNameLogin .info__userUsername {
+  color: hsl(212deg, 100%, 50%);
+}
+.light-theme .info .info__mainUserInfo .info__userJoined {
+  color: hsl(217deg, 20%, 51%);
+}
+.light-theme .info .info__userBio {
+  color: hsl(217deg, 35%, 45%);
+}
+.light-theme .info .info__userBio.noBio {
+  color: hsla(217deg, 35%, 45%, 0.5);
+}
+.light-theme .info .info__userNumbers {
+  background-color: hsl(227deg, 100%, 98%);
+}
+.light-theme .info .info__userNumbers .info__userNumbersBox h3 {
+  color: hsl(217deg, 35%, 45%);
+}
+.light-theme .info .info__userNumbers .info__userNumbersBox span {
+  color: hsl(217deg, 21%, 21%);
+}
+.light-theme .info .info__userContacts .info__userContactsBox div svg path {
+  fill: hsl(217deg, 35%, 45%);
+}
+.light-theme .info .info__userContacts .info__userContactsBox div span, .light-theme .info .info__userContacts .info__userContactsBox div a {
+  color: hsl(217deg, 35%, 45%);
+}
+.light-theme .info .info__userContacts .info__userContactsBox div.noData svg path {
+  fill: hsla(217deg, 35%, 45%, 0.5);
+}
+.light-theme .info .info__userContacts .info__userContactsBox div.noData span, .light-theme .info .info__userContacts .info__userContactsBox div.noData a {
+  color: hsla(217deg, 35%, 45%, 0.5);
+}
+.light-theme .info .info__userContacts .info__userContactsBox div.noData a {
+  cursor: default;
+}
+
 .dark-theme .info {
   background-color: hsl(222deg, 41%, 20%);
 }
@@ -266,6 +318,9 @@ body .info .info__userContacts .info__userContactsBox:nth-of-type(2) div:last-ch
 }
 .dark-theme .info .info__userContacts .info__userContactsBox div.noData span, .dark-theme .info .info__userContacts .info__userContactsBox div.noData a {
   color: hsla(0deg, 0%, 100%, 0.5);
+}
+.dark-theme .info .info__userContacts .info__userContactsBox div.noData a {
+  cursor: default;
 }
 
 /*# sourceMappingURL=style.css.map */

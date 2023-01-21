@@ -56,6 +56,9 @@
                     span, a {
                         color: map-get($dark-colors, main_emptyContactText-color);
                     }
+                    a {
+                        cursor: default;
+                    }
                 }
             }
         }

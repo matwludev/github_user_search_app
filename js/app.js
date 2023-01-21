@@ -16,6 +16,7 @@ const userCompany = document.querySelector(".info__userCompany");
 const searchButton = document.querySelector(".user__searchBtn");
 const bodyTheme = document.querySelector("body");
 const themeBtn = document.querySelector(".header__switchThemeBtn");
+const searchError = document.querySelector(".user__searchNotFound");
 
 window.onload = () => {
 	if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
@@ -28,11 +29,14 @@ window.onload = () => {
 		themeBtn.innerText = "DARK";
 	}
 };
+
 const catLoader = async () => {
 	const octocat = await fetch("https://api.github.com/users/octocat");
 	const octocatJson = await octocat.json();
-
+	console.log(octocatJson);
 	const date = new Date(octocatJson.created_at);
+	const company = octocatJson.company.substring(1);
+
 	userSearch.value = "";
 	userPhoto.src = octocatJson.avatar_url;
 	userName.innerText = octocatJson.name;
@@ -50,14 +54,20 @@ const catLoader = async () => {
 	userFollowing.innerText = octocatJson.following;
 	userLocation.innerText = octocatJson.location;
 	userWebsite.innerText = octocatJson.blog;
+	userWebsite.href = octocatJson.blog;
 	octocatJson.twitter_username == null
 		? ((userTwitter.innerText = "Not Available"),
-		  userTwitter.parentElement.classList.add("noData"))
-		: (userTwitter.innerText = octocatJson.twitter_username);
+		  userTwitter.parentElement.classList.add("noData"),
+		  (userTwitter.href = "javascript:void(0)"))
+		: ((userTwitter.innerText = octocatJson.twitter_username),
+		  (userTwitter.href =
+				"https://twitter.com/" + octocatJson.twitter_username));
 	userCompany.innerText = octocatJson.company;
+	userCompany.href = "https://github.com/" + company;
 };
 
 catLoader();
+
 searchButton.onclick = () => {
 	const userFinder = async () => {
 		const response = await fetch(
@@ -66,9 +76,13 @@ searchButton.onclick = () => {
 		const myJson = await response.json();
 		console.log(myJson);
 		const date = new Date(myJson.created_at);
-		if (myJson.message == "Not Found") {
-			alert("No user!");
+
+		if (userSearch.value == "") {
+			alert("Empty username!");
+		} else if (myJson.message == "Not Found") {
+			searchError.style.display = "inline-block";
 		} else {
+			searchError.style.display = "none";
 			userPhoto.src = myJson.avatar_url;
 			myJson.name == null
 				? (userName.innerText = myJson.login)
@@ -96,21 +110,29 @@ searchButton.onclick = () => {
 
 			myJson.blog == null || myJson.blog == ""
 				? ((userWebsite.innerText = "Not Available"),
-				  userWebsite.parentElement.classList.add("noData"))
+				  userWebsite.parentElement.classList.add("noData"),
+				  (userWebsite.href = "javascript:void(0)"))
 				: ((userWebsite.innerText = myJson.blog),
-				  userWebsite.parentElement.classList.remove("noData"));
+				  userWebsite.parentElement.classList.remove("noData"),
+				  (userWebsite.href = myJson.blog));
 
 			myJson.twitter_username == null || myJson.twitter_username == ""
 				? ((userTwitter.innerText = "Not Available"),
-				  userTwitter.parentElement.classList.add("noData"))
+				  userTwitter.parentElement.classList.add("noData"),
+				  (userTwitter.href = "javascript:void(0)"))
 				: ((userTwitter.innerText = myJson.twitter_username),
-				  userTwitter.parentElement.classList.remove("noData"));
+				  userTwitter.parentElement.classList.remove("noData"),
+				  (userTwitter.href =
+						"https://twitter.com/" + myJson.twitter_username));
 
 			myJson.company == null || myJson.company == ""
 				? ((userCompany.innerText = "Not Available"),
-				  userCompany.parentElement.classList.add("noData"))
+				  userCompany.parentElement.classList.add("noData"),
+				  (userCompany.href = "javascript:void(0)"))
 				: ((userCompany.innerText = myJson.company),
-				  userCompany.parentElement.classList.remove("noData"));
+				  userCompany.parentElement.classList.remove("noData"),
+				  (userCompany.href =
+						"https://github.com/" + myJson.company.substring(1)));
 		}
 	};
 	userFinder();
