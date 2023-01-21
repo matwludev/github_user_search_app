@@ -1,0 +1,111 @@
+body {
+    .info {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin: 0 2.5rem;
+        border-radius: 1rem;
+
+        .info__userPhoto {
+            position: absolute;
+            width: 7rem;
+            height: 7rem;
+            top: 3.5rem;
+            left: 2.5rem;
+            border-radius: 50%;
+        }
+
+        .info__mainUserInfo {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 3.5rem;
+            
+            .info__userNameLogin {
+                margin: 3.5rem 0 0 12rem;
+                .info__userName {
+                    font-size: 1.6rem;
+                    line-height: 2.4rem;
+                    font-weight: 700;
+                }
+                .info__userUsername{
+                    font-size: 1.3rem;
+                    line-height: 2rem;
+                    font-weight: 400;
+                }
+            }
+            .info__userJoined {
+                display: inline-block;
+                margin: .5rem 0 0 12rem;
+                font-size: 1.3rem;
+                line-height: 2rem;
+                font-weight: 400;
+            }
+        }
+        .info__userBio {
+            width: 100%;
+            font-size: 1.3rem;
+            line-height: 2.5rem;
+            font-weight: 400;
+            margin: 0 2.5rem;
+        }
+        .info__userNumbers{
+            display: flex;
+            flex-direction: row;
+            justify-content:space-between;
+            align-items: center;
+            margin: 2.5rem;
+            padding: 2rem 3rem;
+            border-radius: 1rem;
+            .info__userNumbersBox{
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                h3{
+                    font-size: 1.1rem;
+                    line-height: 1.6rem;
+                    font-weight: 400;
+                    text-align: center;
+                    margin-bottom: 1rem;
+                }
+
+                span{ 
+                    font-size: 1.6rem;
+                    line-height: 2.4rem;
+                    font-weight: 700;
+                    text-align: center;
+                }
+            }
+        }
+        .info__userContacts {
+            display: flex;
+            flex-direction: column;
+            margin-left: 2.5rem;
+            .info__userContactsBox {
+                display: flex;
+                flex-direction: column;
+                div {
+                    position: relative;
+                    margin-bottom: 1.5rem;
+                    svg {
+                        position: absolute;
+                        left: 0;
+                    }
+                    span, a {
+                        position: relative;
+                        font-size: 1.3rem;
+                        line-height: 2rem;
+                        font-weight: 400;
+                        padding-left: 3.3rem;
+                    }
+                }
+                &:nth-of-type(2) {
+                    div:last-child {
+                        margin-bottom: 5rem;
+                    }
+                }
+            }
+        }
+    }
+}
