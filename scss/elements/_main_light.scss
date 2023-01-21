@@ -1,0 +1,66 @@
+.light-theme {
+    .info {
+        background-color: map-get($light-colors, main_Bg-color);
+
+        .info__mainUserInfo {            
+            .info__userNameLogin {
+                .info__userName {
+                    color: map-get($light-colors, main_userNameText-color );
+                }
+                .info__userUsername{
+                    color: map-get($light-colors, main_userLoginText-color );
+                }
+            }
+            .info__userJoined {
+                color: map-get($light-colors, main_userJoinedText-color );
+            }
+        }
+        .info__userBio {
+            color: map-get($light-colors, main_userBioText-color );
+        }
+
+        .info__userBio.noBio {
+            color: map-get($light-colors, main_userEmptyBioText-color );
+        }
+        .info__userNumbers{
+            background-color: map-get($light-colors, main_numbersBg-color );
+
+            .info__userNumbersBox{
+                h3{
+                    color: map-get($light-colors, main_numbersTitleText-color );
+                }
+                span {
+                    color: map-get($light-colors, main_numbersSpanText-color );
+                }
+            }
+        }
+        .info__userContacts {
+            .info__userContactsBox {
+                div {
+                    svg {
+                        path { 
+                            fill: map-get($light-colors, main_contactText-color);
+                        }
+                    }
+                    span, a {
+                        color: map-get($light-colors, main_contactText-color);
+                    }
+                }
+
+                div.noData {
+                    svg {
+                        path {
+                            fill: map-get($light-colors, main_emptyContactText-color);
+                        }
+                    }
+                    span, a {
+                        color: map-get($light-colors, main_emptyContactText-color);
+                    }
+                    a {
+                        cursor: default;
+                    }
+                }
+            }
+        }
+    }
+}

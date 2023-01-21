@@ -29,5 +29,14 @@
             border: none;
             padding: 1rem 1.5rem;
         }
+        .user__searchNotFound {
+            position: absolute;
+            display: none;
+            font-size: 1.5rem;
+            font-weight: 700;
+            top: 1.75rem;
+            right: 10rem;
+            color: map-get($light-colors ,nav_error-color );
+        }
     }
  }
