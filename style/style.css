@@ -16,6 +16,7 @@ a {
 }
 
 body .header {
+  position: relative;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -27,17 +28,27 @@ body .header .header__title {
   font-weight: 700;
 }
 body .header .header__switchThemeBtn {
-  position: relative;
   background: none;
   border: none;
   text-transform: uppercase;
   font-size: 1.3rem;
   letter-spacing: 0.25rem;
   padding-right: 4rem;
+  font-weight: 700;
+}
+body .header svg {
+  position: absolute;
+  top: 4rem;
+  right: 3rem;
 }
 @media screen and (min-width: 768px) {
   body .header {
     padding: 14rem 10rem 4rem;
+  }
+  body .header svg {
+    position: absolute;
+    top: 15rem;
+    right: 10rem;
   }
 }
 @media screen and (min-width: 1024px) {
@@ -46,6 +57,11 @@ body .header .header__switchThemeBtn {
   }
   body .header .header__switchThemeBtn {
     cursor: pointer;
+  }
+  body .header svg {
+    position: absolute;
+    top: 15rem;
+    right: 36rem;
   }
 }
 
@@ -104,6 +120,14 @@ body .user .user__searchNotFound {
     width: 2.5rem;
     height: 2.5rem;
     left: 3rem;
+  }
+}
+@media screen and (min-width: 1024px) {
+  body .user {
+    margin: 0 36rem 2.5rem;
+  }
+  body .user .user__searchInput, body .user .user__searchBtn {
+    cursor: pointer;
   }
 }
 
@@ -307,11 +331,14 @@ body .info .info__userContacts .info__userContactsBox:nth-of-type(2) div:last-ch
 .light-theme .header .header__switchThemeBtn {
   color: hsl(217deg, 35%, 45%);
 }
-.light-theme .header .header__switchThemeBtn::after {
-  content: url("../assets/icon-moon.svg");
-  position: absolute;
-  top: 0;
-  right: 1rem;
+.light-theme .header .header__switchThemeBtn:hover {
+  color: hsl(220deg, 18%, 16%);
+}
+.light-theme .header .header__switchSun {
+  display: none;
+}
+.light-theme .header .header__switchThemeBtn:hover ~ .header__switchMoon path {
+  fill: hsl(220deg, 18%, 16%);
 }
 
 .dark-theme .header .header__title {
@@ -320,11 +347,14 @@ body .info .info__userContacts .info__userContactsBox:nth-of-type(2) div:last-ch
 .dark-theme .header .header__switchThemeBtn {
   color: hsl(0deg, 0%, 100%);
 }
-.dark-theme .header .header__switchThemeBtn::after {
-  content: url("../assets/icon-sun.svg");
-  position: absolute;
-  top: 0;
-  right: 1rem;
+.dark-theme .header .header__switchThemeBtn:hover {
+  color: hsl(222deg, 40%, 70%);
+}
+.dark-theme .header .header__switchMoon {
+  display: none;
+}
+.dark-theme .header .header__switchThemeBtn:hover ~ .header__switchSun path {
+  fill: hsl(222deg, 40%, 70%);
 }
 
 .light-theme .user .user__searchInput {
@@ -339,6 +369,9 @@ body .info .info__userContacts .info__userContactsBox:nth-of-type(2) div:last-ch
   background-color: hsl(212deg, 100%, 50%);
   color: hsl(0deg, 0%, 100%);
 }
+.light-theme .user .user__searchBtn:hover {
+  background-color: hsl(212deg, 100%, 69%);
+}
 
 .dark-theme .user .user__searchInput {
   background-color: hsl(222deg, 41%, 20%);
@@ -350,6 +383,9 @@ body .info .info__userContacts .info__userContactsBox:nth-of-type(2) div:last-ch
 .dark-theme .user .user__searchBtn {
   background-color: hsl(212deg, 100%, 50%);
   color: hsl(0deg, 0%, 100%);
+}
+.dark-theme .user .user__searchBtn:hover {
+  background-color: hsl(212deg, 100%, 69%);
 }
 
 .light-theme .info {

@@ -13,5 +13,9 @@
             background-color: map-get($light-colors , nav_btnBg-color );
             color: map-get($light-colors, nav_btnText-color )
         }
+
+        .user__searchBtn:hover {
+            background-color: map-get($light-colors , nav_btnHoverBg-color );
+        }
     }
 }

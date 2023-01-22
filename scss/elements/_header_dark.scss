@@ -5,13 +5,20 @@
         }
         .header__switchThemeBtn {
             color: map-get($dark-colors, header_text-color);
+        }
 
-            &::after {
-                content: url('../assets/icon-sun.svg');
-                position: absolute;
-                top: 0;
-                right: 1rem;
-            }
+        .header__switchThemeBtn:hover {
+            color: map-get($dark-colors, header_switchHoverTxt-color );
+        }
+
+        .header__switchMoon {
+            display: none;
+        }
+
+        .header__switchThemeBtn:hover ~ .header__switchSun {
+                path {
+                    fill: map-get($dark-colors, header_switchHoverTxt-color );
+                }
         }
     }
 }

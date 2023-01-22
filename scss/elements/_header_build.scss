@@ -1,5 +1,6 @@
 body {
     .header {
+        position: relative;
         display: flex;
         flex-direction: row;
         justify-content: space-between;
@@ -12,19 +13,31 @@ body {
         }
 
         .header__switchThemeBtn {
-            position: relative;
             background: none;
             border: none;
             text-transform: uppercase;
             font-size: 1.3rem;
             letter-spacing: .25rem;
             padding-right: 4rem;
+            font-weight: 700;
+        }
+
+        svg {
+            position: absolute;
+            top: 4rem;
+            right: 3rem;
         }
     }
 
     @include tablet {
         .header {
             padding: 14rem 10rem 4rem; 
+
+            svg {
+                position: absolute;
+                top: 15rem;
+                right: 10rem;
+            }
         }
     }
 
@@ -33,7 +46,13 @@ body {
             padding: 14rem 36rem 4rem;
 
             .header__switchThemeBtn {
-                cursor: pointer;
+                cursor: pointer; 
+            }
+
+            svg {
+                position: absolute;
+                top: 15rem;
+                right: 36rem;
             }
         }
     }
