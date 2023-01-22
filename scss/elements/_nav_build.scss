@@ -60,8 +60,23 @@
             }
         }
     }
-
     @include desktop {
+        .user {
+            margin: 0 16rem 2.5rem;
+            .user__searchInput, .user__searchBtn {
+                cursor: pointer;
+            }
+        }
+    }
+    @include mDesktop {
+        .user {
+            margin: 0 20rem 2.5rem;
+            .user__searchInput, .user__searchBtn {
+                cursor: pointer;
+            }
+        }
+    }
+    @include lDesktop {
         .user {
             margin: 0 36rem 2.5rem;
             .user__searchInput, .user__searchBtn {

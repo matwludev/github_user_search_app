@@ -43,6 +43,36 @@ body {
 
     @include desktop {
         .header {
+            padding: 14rem 16rem 4rem;
+
+            .header__switchThemeBtn {
+                cursor: pointer; 
+            }
+
+            svg {
+                position: absolute;
+                top: 15rem;
+                right: 16rem;
+            }
+        }
+    }
+    @include mDesktop {
+        .header {
+            padding: 14rem 20rem 4rem;
+
+            .header__switchThemeBtn {
+                cursor: pointer; 
+            }
+
+            svg {
+                position: absolute;
+                top: 15rem;
+                right: 20rem;
+            }
+        }
+    }
+    @include lDesktop {
+        .header {
             padding: 14rem 36rem 4rem;
 
             .header__switchThemeBtn {
