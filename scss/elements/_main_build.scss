@@ -197,4 +197,60 @@ body {
             }
         }
     }
+    @include desktop {
+        .info {
+            margin: 0 16rem; 
+
+            .info__userPhoto{
+                top: 5rem;
+                left: 5rem;
+            }
+            .info__mainUserInfo {
+                flex-direction: row;
+                justify-content: space-between;
+                margin-bottom: 4rem;
+
+                .info__userNameLogin {
+                    margin: 5rem 14rem 0 20rem;
+                }
+                .info__userJoined {
+                    display: inline-block;
+                    margin: 6rem 4rem 0 0;
+                }
+            }
+            .info__userBio {
+                font-size: 1.5rem;
+                margin: 0 5rem 0 20rem;
+            }
+            .info__userNumbers{
+                align-items: flex-start;
+                justify-content: space-evenly;
+                margin: 4rem 4rem 4rem 20rem;
+                padding: 2rem 3rem;
+            }
+            .info__userContacts {
+                margin-left: 20rem;
+                .info__userContactsBox {
+                    div {
+                        a:hover {
+                            text-decoration: underline;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    @include mDesktop {
+        .info {
+            margin: 0 20rem; 
+        }
+    }
+
+    @include lDesktop {
+        .info {
+            margin: 0 36rem; 
+
+        }
+    }
 }
