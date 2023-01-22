@@ -40,6 +40,14 @@ body .header .header__switchThemeBtn {
     padding: 14rem 10rem 4rem;
   }
 }
+@media screen and (min-width: 1024px) {
+  body .header {
+    padding: 14rem 36rem 4rem;
+  }
+  body .header .header__switchThemeBtn {
+    cursor: pointer;
+  }
+}
 
 body .user {
   position: relative;
@@ -202,6 +210,88 @@ body .info .info__userContacts .info__userContactsBox div span, body .info .info
 body .info .info__userContacts .info__userContactsBox:nth-of-type(2) div:last-child {
   margin-bottom: 5rem;
 }
+@media screen and (min-width: 768px) {
+  body .info {
+    margin: 0 10rem;
+  }
+  body .info .info__userPhoto {
+    width: 12rem;
+    height: 12rem;
+    top: 4rem;
+    left: 4rem;
+  }
+  body .info .info__mainUserInfo {
+    margin-bottom: 4rem;
+  }
+  body .info .info__mainUserInfo .info__userNameLogin {
+    margin: 5rem 0 0 20rem;
+  }
+  body .info .info__mainUserInfo .info__userNameLogin .info__userName {
+    font-size: 2.6rem;
+    line-height: 3.8rem;
+  }
+  body .info .info__mainUserInfo .info__userNameLogin .info__userUsername {
+    font-size: 1.6rem;
+    line-height: 2.4rem;
+  }
+  body .info .info__mainUserInfo .info__userJoined {
+    display: inline-block;
+    margin: 0.5rem 0 0 20rem;
+    font-size: 1.5rem;
+    line-height: 2.2rem;
+  }
+  body .info .info__userBio {
+    font-size: 1.5rem;
+    margin: 0 4rem;
+  }
+  body .info .info__userNumbers {
+    align-items: flex-start;
+    margin: 4rem;
+    padding: 2rem 3rem;
+  }
+  body .info .info__userNumbers .info__userNumbersBox {
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+  body .info .info__userNumbers .info__userNumbersBox h3 {
+    font-size: 1.3rem;
+    line-height: 2rem;
+    font-weight: 400;
+    text-align: left;
+  }
+  body .info .info__userNumbers .info__userNumbersBox span {
+    font-size: 2.2rem;
+    line-height: 3.2rem;
+    text-align: left;
+  }
+  body .info .info__userContacts {
+    display: flex;
+    flex-direction: row;
+    margin-left: 4rem;
+  }
+  body .info .info__userContacts .info__userContactsBox {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 4rem;
+  }
+  body .info .info__userContacts .info__userContactsBox div {
+    position: relative;
+    margin-right: 10rem;
+  }
+  body .info .info__userContacts .info__userContactsBox div svg {
+    position: absolute;
+    left: 0;
+  }
+  body .info .info__userContacts .info__userContactsBox div span, body .info .info__userContacts .info__userContactsBox div a {
+    position: relative;
+    font-size: 1.5rem;
+    line-height: 2.2rem;
+    padding-left: 3.3rem;
+  }
+  body .info .info__userContacts .info__userContactsBox:nth-of-type(2) div:last-child {
+    margin-bottom: 0;
+  }
+}
 
 .light-theme {
   background-color: hsl(227deg, 100%, 98%);
@@ -239,6 +329,7 @@ body .info .info__userContacts .info__userContactsBox:nth-of-type(2) div:last-ch
 
 .light-theme .user .user__searchInput {
   background-color: hsl(0deg, 0%, 100%);
+  box-shadow: 0px 16px 30px -10px hsla(227deg, 46%, 50%, 0.199);
   color: hsl(217deg, 35%, 45%);
 }
 .light-theme .user .user__searchInput::placeholder {
@@ -263,6 +354,7 @@ body .info .info__userContacts .info__userContactsBox:nth-of-type(2) div:last-ch
 
 .light-theme .info {
   background-color: hsl(0deg, 0%, 100%);
+  box-shadow: 0px 16px 30px -10px hsla(227deg, 46%, 50%, 0.199);
 }
 .light-theme .info .info__mainUserInfo .info__userNameLogin .info__userName {
   color: hsl(217deg, 21%, 21%);

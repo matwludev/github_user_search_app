@@ -108,4 +108,93 @@ body {
             }
         }
     }
+
+    @include tablet {
+        .info {
+            margin: 0 10rem; 
+
+            .info__userPhoto{
+                width: 12rem;
+                height: 12rem;
+                top: 4rem;
+                left: 4rem;
+            }
+            .info__mainUserInfo {
+                margin-bottom: 4rem;
+
+                .info__userNameLogin {
+                    margin: 5rem 0 0 20rem;
+                    .info__userName {
+                        font-size: 2.6rem;
+                        line-height: 3.8rem;
+                    }
+                    .info__userUsername{
+                        font-size: 1.6rem;
+                        line-height: 2.4rem;
+                    }
+                }
+                .info__userJoined {
+                    display: inline-block;
+                    margin: .5rem 0 0 20rem;
+                    font-size: 1.5rem;
+                    line-height: 2.2rem;
+                }
+            }
+            .info__userBio {
+                font-size: 1.5rem;
+                margin: 0 4rem;
+            }
+            .info__userNumbers{
+                align-items: flex-start;
+                margin: 4rem;
+                padding: 2rem 3rem;
+
+                .info__userNumbersBox{
+                    justify-content: flex-start;
+                    align-items: flex-start;
+                    h3{
+                        font-size: 1.3rem;
+                        line-height: 2rem;
+                        font-weight: 400;
+                        text-align: left;
+                    }
+    
+                    span{ 
+                        font-size: 2.2rem;
+                        line-height: 3.2rem;
+                        text-align: left;
+                    }
+                }
+            }
+            .info__userContacts {
+                display: flex;
+                flex-direction: row;
+                margin-left: 4rem;
+                .info__userContactsBox {
+                    display: flex;
+                    flex-direction: column;
+                    margin-bottom: 4rem;
+                    div {
+                        position: relative;
+                        margin-right: 10rem;
+                        svg {
+                            position: absolute;
+                            left: 0;
+                        }
+                        span, a {
+                            position: relative;
+                            font-size: 1.5rem;
+                            line-height: 2.2rem;
+                            padding-left: 3.3rem;
+                        }
+                    }
+                    &:nth-of-type(2) {
+                        div:last-child {
+                            margin-bottom: 0;
+                        }
+                    }
+                }
+            }
+        }
+    }
 }

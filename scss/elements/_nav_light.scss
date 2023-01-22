@@ -2,6 +2,7 @@
     .user {
         .user__searchInput {
             background-color: map-get($light-colors, nav_placeholderBg-color);
+            box-shadow: 0px 16px 30px -10px map-get($light-colors, nav_shadow-color );
             color: map-get($light-colors, nav_placeholderText-color);
             &::placeholder {
                 color: map-get($light-colors, nav_placeholderText-color)

@@ -1,6 +1,7 @@
 .light-theme {
     .info {
         background-color: map-get($light-colors, main_Bg-color);
+        box-shadow: 0px 16px 30px -10px map-get($light-colors, main_shadow-color );
 
         .info__mainUserInfo {            
             .info__userNameLogin {
