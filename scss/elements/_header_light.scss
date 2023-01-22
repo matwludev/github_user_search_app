@@ -5,13 +5,20 @@
         }
         .header__switchThemeBtn {
             color: map-get($light-colors, header_switchTxt-color);
+        }
 
-            &::after {
-                content: url('../assets/icon-moon.svg');
-                position: absolute;
-                top: 0;
-                right: 1rem;
-            }
+        .header__switchThemeBtn:hover {
+            color: map-get($light-colors, header_switchHoverTxt-color );
+        }
+
+        .header__switchSun {
+            display: none;
+        }
+
+        .header__switchThemeBtn:hover ~ .header__switchMoon {
+                path {
+                    fill: map-get($light-colors, header_switchHoverTxt-color );
+                }
         }
     }
 }
