@@ -18,6 +18,8 @@
         &::after {
             content: url('../assets/icon-search.svg');
             position: absolute;
+            width: 2rem;
+            height: 2rem;
             top: 1.75rem;
             left: 1.5rem;
         }
@@ -37,6 +39,25 @@
             top: 1.75rem;
             right: 10rem;
             color: map-get($light-colors ,nav_error-color );
+        }
+    }
+
+    @include tablet {
+        .user {
+            margin: 0 10rem 2.5rem;
+            .user__searchInput {
+                padding: 2rem 0 2rem 8rem;
+
+                &::placeholder {
+                    font-size: 1.8rem;
+                    line-height: 2.5rem;
+                }
+            }
+            &::after {
+                width: 2.5rem;
+                height: 2.5rem;
+                left: 3rem;
+            }
         }
     }
  }

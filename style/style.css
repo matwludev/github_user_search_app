@@ -35,6 +35,11 @@ body .header .header__switchThemeBtn {
   letter-spacing: 0.25rem;
   padding-right: 4rem;
 }
+@media screen and (min-width: 768px) {
+  body .header {
+    padding: 14rem 10rem 4rem;
+  }
+}
 
 body .user {
   position: relative;
@@ -54,6 +59,8 @@ body .user .user__searchInput::placeholder {
 body .user::after {
   content: url("../assets/icon-search.svg");
   position: absolute;
+  width: 2rem;
+  height: 2rem;
   top: 1.75rem;
   left: 1.5rem;
 }
@@ -73,6 +80,23 @@ body .user .user__searchNotFound {
   top: 1.75rem;
   right: 10rem;
   color: hsl(0deg, 91%, 62%);
+}
+@media screen and (min-width: 768px) {
+  body .user {
+    margin: 0 10rem 2.5rem;
+  }
+  body .user .user__searchInput {
+    padding: 2rem 0 2rem 8rem;
+  }
+  body .user .user__searchInput::placeholder {
+    font-size: 1.8rem;
+    line-height: 2.5rem;
+  }
+  body .user::after {
+    width: 2.5rem;
+    height: 2.5rem;
+    left: 3rem;
+  }
 }
 
 body .info {

@@ -21,4 +21,10 @@ body {
             padding-right: 4rem;
         }
     }
+
+    @include tablet {
+        .header {
+            padding: 14rem 10rem 4rem; 
+        }
+    }
 }
