@@ -27,4 +27,14 @@ body {
             padding: 14rem 10rem 4rem; 
         }
     }
+
+    @include desktop {
+        .header {
+            padding: 14rem 36rem 4rem;
+
+            .header__switchThemeBtn {
+                cursor: pointer;
+            }
+        }
+    }
 }
